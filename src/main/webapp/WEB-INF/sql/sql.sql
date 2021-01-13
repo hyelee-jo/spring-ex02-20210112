@@ -13,7 +13,7 @@ alter table tbl_board add constraint pk_board
 primary key (bno);
 
 insert into tbl_board (bno, title, content, writer)
-values (seq_board.nextval, 'í…ŒìŠ¤íŠ¸ ì œëª©','í…ŒìŠ¤íŠ¸ ë‚´ìš©','user00');
+values (seq_board.nextval, 'Å×½ºÆ® Á¦¸ñ','Å×½ºÆ® ³»¿ë','user00');
 
 commit;
 
@@ -24,8 +24,8 @@ select * from tbl_board where bno > 0;
 CREATE SEQUENCE seq_comment;
 
 CREATE TABLE tbl_comment (
-    cno NUMBER(10, 0), -- ëŒ“ê¸€ promary key
-    bno NUMBER(10, 0) NOT NULL, -- ê²Œì‹œê¸€ ë²ˆí˜¸
+    cno NUMBER(10, 0), -- ´ñ±Û promary key
+    bno NUMBER(10, 0) NOT NULL, -- °Ô½Ã±Û ¹øÈ£
     content VARCHAR2(500) NOT NULL,
     Writer VARCHAR2(50) NOT NULL,
     regdate DATE DEFAULT SYSDATE,
@@ -34,4 +34,22 @@ CREATE TABLE tbl_comment (
 
 
 AlTER TABLE tbl_comment ADD updatedate DATE DEFAULT SYSDATE;
+
+INSERT tbl_comment (cno, bno, content, writer)
+VALUES (seq_comment.nextval, 1, 'first comment', 'newbie');
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
