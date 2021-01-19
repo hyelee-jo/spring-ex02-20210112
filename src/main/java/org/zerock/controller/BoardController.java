@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
+import org.zerock.domain.PageDTO;
 import org.zerock.service.BoardService;
 
 import lombok.AllArgsConstructor;
@@ -29,7 +31,7 @@ public class BoardController {
 		this.service = service; 
 	}
 	*/
-
+	/*
 	// 211 page 표
 //	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	@GetMapping("/list") 
@@ -42,7 +44,20 @@ public class BoardController {
 		model.addAttribute("list", list);
 		
 	}
-
+	*/
+	
+	@GetMapping("/list")
+	public void list(Criteria cri, Model model) {
+		List<BoardVO> list = service.getList(cri);
+		
+		int total = service.getTotal(cri);
+		
+		PageDTO dto = new PageDTO(cri, total);
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", dto);
+	}
+	
 	@GetMapping("/register")
 	public void register() {
 		
