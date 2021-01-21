@@ -53,10 +53,3 @@ public interface BoardMapper {
 
 
 
-
-
-
-
-
-
-
