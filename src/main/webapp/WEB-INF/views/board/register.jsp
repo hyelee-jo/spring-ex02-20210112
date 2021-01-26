@@ -21,7 +21,7 @@
 </head>
 <body>
 	<u:navbar></u:navbar>
-	
+
 	<div class="container-sm">
 		<div class="row">
 			<div class="col-12 col-sm-6 offset-sm-3">
@@ -57,10 +57,6 @@
 
 </body>
 </html>
-
-
-
-
 
 
 

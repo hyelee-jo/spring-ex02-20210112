@@ -17,7 +17,7 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/main/webapp/WEB-InF/spring/root-context.xml")
+@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j
 public class CommentMapperTests {
 	
@@ -28,7 +28,7 @@ public class CommentMapperTests {
 	public void testExist() {
 		assertNotNull(mapper);
 	}
-	
+
 	@Test
 	public void testGetList() {
 		List<CommentVO> list = mapper.getList();
@@ -50,6 +50,7 @@ public class CommentMapperTests {
 		
 		assertEquals(before + 1, after);
 	}
+	
 	
 	@Test
 	public void testInsertSelectKey() {
@@ -119,16 +120,7 @@ public class CommentMapperTests {
 		
 		assertEquals("other comment", com.getContent());
 	}
-	
-	
 }
-
-
-
-
-
-
-
 
 
 

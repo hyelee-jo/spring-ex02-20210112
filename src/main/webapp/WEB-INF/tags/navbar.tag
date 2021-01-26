@@ -17,7 +17,6 @@
       		<c:param name="amount" value="${cri.amount }" />
       		<c:param name="type" value="${cri.type }" />
       		<c:param name="keyword" value="${cri.keyword }" />
-      		
       	</c:url>
         <a class="nav-link" href="${listLink }">목록 <span class="sr-only">(current)</span></a>
       </li>

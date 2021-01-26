@@ -11,7 +11,7 @@ public interface BoardMapper {
 	// SELECT count(*) FROM tbl_board
 	
 	public List<BoardVO> getList();
-
+	
 	public List<BoardVO> getListWithPaging(Criteria cri);
 	
 	public void insert(BoardVO board);
@@ -42,14 +42,11 @@ public interface BoardMapper {
 	
 	public int delete(Long bno);
 	
-	public int update(BoardVO board); 
-
-
-
-
-
-
+	public int update(BoardVO board);
 }
+
+
+
 
 
 

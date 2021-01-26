@@ -21,10 +21,11 @@
 </head>
 <body>
 	<u:navbar></u:navbar>
-<%-- 	
+
+<%--
 	<h1>pageNum : ${cri.pageNum }</h1>
 	<h1>amount : ${cri.amount }</h1>
---%>
+ --%>
 
 	<div class="container-sm">
 		<div class="row">
@@ -34,7 +35,7 @@
 		</div>
 		<div class="row">
 			<div class="col-12 col-sm-6 offset-sm-3">
-				
+
 					<div class="form-group">
 						<label for="input3">번호</label>
 						<input class="form-control" type="text" id="input3" readonly value="${board.bno }" />
@@ -56,28 +57,28 @@
 						    value='<c:out value="${board.writer }" />' type="text"
 							class="form-control" id="input2" >
 					</div>
-					
-					<!-- 
-					"수정" -> 수정, 삭제
-					책 : 254page 위쪽 코드
-					수정 button 요소를 만들고
-					button을 눌렀을 때 이동하는 js 작성	-->
 
-					<!-- 
+					<!--
+					"수정" -> 수정, 삭제
+					책:  254page 위쪽 코드
+					수정 button 요소를 만들고
+					button을 눌렀을 때 이동하는 js 작성 -->
+					
+					<!--
 					우리:
-					a요소로 만듬
+					a요소로 만듬 
 					 -->
-					 <c:url value="/board/modify" var="modifyLink">
-					 	<c:param name="bno" value="${board.bno }"></c:param>
-					 	<c:param name="pageNum" value="${cri.pageNum }"></c:param>
-					 	<c:param name="amount" value="${cri.amount }"></c:param>
-					 	<c:param name="type" value="${cri.type }" ></c:param>
-					 	<c:param name="keyword" value="${cri.keyword }" ></c:param>
-					 </c:url>	
-					 <a href="${modifyLink}" class="btn btn-secondary">
-					  	  수정
-					 </a>
-				
+					<c:url value="/board/modify" var="modifyLink">
+						<c:param name="bno" value="${board.bno }"></c:param>
+						<c:param name="pageNum" value="${cri.pageNum }"></c:param>
+						<c:param name="amount" value="${cri.amount }"></c:param>
+						<c:param name="type" value="${cri.type }" ></c:param>
+						<c:param name="keyword" value="${cri.keyword }" ></c:param>
+					</c:url>
+					<a href="${modifyLink }" class="btn btn-secondary">
+						수정
+					</a>
+					
 			</div>
 		</div>
 	</div>

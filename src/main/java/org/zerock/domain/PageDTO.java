@@ -21,7 +21,7 @@ public class PageDTO {
 		this.cri = cri;
 		this.total = total;
 		
-		this.endPage  = (int) Math.ceil(cri.getPageNum() / 10.0) * 10;
+		this.endPage = (int) Math.ceil(cri.getPageNum() / 10.0) * 10;
 		this.startPage = endPage - 9;
 		
 		int realEnd = (int) Math.ceil(total * 1.0 / cri.getAmount());
@@ -32,17 +32,6 @@ public class PageDTO {
 		this.next = endPage < realEnd;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

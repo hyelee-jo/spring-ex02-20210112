@@ -14,6 +14,7 @@ public class CommentServiceImpl implements CommentService {
 	
 	private CommentMapper mapper;
 	
+
 	@Override
 	public void register(CommentVO comment) {
 		mapper.insertSelectKey(comment);
@@ -28,27 +29,14 @@ public class CommentServiceImpl implements CommentService {
 	public CommentVO get(Long cno) {
 		return mapper.read(cno);
 	}
-	
+
 	@Override
 	public boolean remove(Long cno) {
 		return mapper.delete(cno) == 1;
 	}
-
-	@Override 
+	
+	@Override
 	public boolean modify(CommentVO comment) {
 		return mapper.update(comment) == 1;
 	}
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
