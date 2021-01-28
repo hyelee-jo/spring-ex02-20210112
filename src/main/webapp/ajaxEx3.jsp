@@ -50,14 +50,15 @@ $(document).ready(function() {
 			url: "/replies/new",
 			contentType: "application/json",
 			data: '{"bno":1680,"reply":"새 댓글~","replyer":"user01"}',
-			complete: function(jqXHR, status) {
-				if (status === "success") {
-					console.log("등록 성공");
-					console.log(jqXHR.responseText);
-				} else if (status === "error") {
-					console.log("등록 실패");
-				}
+			success: function(data, status, xhr) {
+				console.log("등록 성공");
+				// console.log(jqXHR.responseText);
+				console.log(data); 
+			},
+			error: function() {
+				console.log("등록 실패");
 			}
+			
 		});
 	});
 	
@@ -65,10 +66,8 @@ $(document).ready(function() {
 		$.ajax({
 			url: "/replies/pages/655/1",
 			type: "get",
-			complete: function(jqXHR, status) {
-				if (status === "success") {
-					console.log(jqXHR.responseText);
-				}
+			success: function(data) {
+				console.log(data);
 			}
 		});
 	});
@@ -79,12 +78,11 @@ $(document).ready(function() {
 			url: "/replies/9",
 			data: '{"bno":1680,"reply":"수정된 댓글!!!"}',
 			contentType: "application/json",
-			complete: function(xhr, status) {
-				if (status === "success") {
-					console.log("수정 완료");
-				} else if (status === "error") {
-					console.log("수정 실패");
-				}
+			success: function(data, status, xhr) {
+				console.log("수정 완료");
+			},
+			error: function() {
+				console.log("수정 실패");
 			}
 		});
 	});
@@ -93,13 +91,13 @@ $(document).ready(function() {
 		$.ajax({
 			method: "delete",
 			url: "/replies/9",
-			complete: function(xhr, status) {
-				if (status === "success") {
-					console.log("삭제 완료");
-				} else if (status === "error") {
-					console.log("삭제 실패");
-				}
+			success: function() {
+				console.log("삭제 완료");
+			},
+			error: function() {
+				console.log("삭제 실패");
 			}
+		
 		});
 	});
 });
@@ -107,7 +105,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<h1>AJAX ex 2</h1>
+<h1>AJAX ex 3</h1>
 <div>
 <button id="btn-1">댓글 등록 성공</button>
 </div>
